@@ -19,7 +19,76 @@ class _ProfilePageState extends State<ProfilePage>{
     return Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: buildListView(),
+          child: Center(
+            child: Container(
+              child: Column(
+                children: [
+                  //buildListView(),
+                  Image.asset('lib/assets/images/logo.png'),
+                  ElevatedButton(
+                    onPressed: (){},
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color.fromARGB(255, 45, 16, 51),
+                      minimumSize: (const Size(120, 40)),
+                    ),
+                    child: const Text(
+                      'VER MEUS DADOS',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontFamily: 'AmaticSC-Regular',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: buildListView,
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color.fromARGB(255, 45, 16, 51),
+                      minimumSize: (const Size(120, 40)),
+                    ),
+                    child: const Text(
+                      'ALTERAR DADOS CADASTRAIS',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontFamily: 'AmaticSC-Regular',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: (){},
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color.fromARGB(255, 45, 16, 51),
+                      minimumSize: (const Size(120, 40)),
+                    ),
+                    child: const Text(
+                      'SOBRE NÓS',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontFamily: 'AmaticSC-Regular',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: (){},
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color.fromARGB(255, 45, 16, 51),
+                      minimumSize: (const Size(120, 40)),
+                    ),
+                    child: const Text(
+                      'LISTA DE USUÁRIOS',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontFamily: 'AmaticSC-Regular',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ),
     );
   }
