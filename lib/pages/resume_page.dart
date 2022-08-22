@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:highlight_text/highlight_text.dart';
 import 'package:sciencenotes/pages/search_page.dart';
 
 class ResumePage extends StatefulWidget {
@@ -9,10 +10,30 @@ class ResumePage extends StatefulWidget {
 }
 
 class _ResumePageState extends State<ResumePage> {
-  String text = "Qualquer coisa";
+  String text = "O aplicativo Sciencenotes foi feito para ajudar pessoas com dificudade nos campos da ciência";
+  
+  makeDialog(BuildContext context, String text){
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(text),
+          );
+        }
+    );
+  }
 
-  makewords (context) {
-    return {}
+  Map<String, HighlightedWord> makewords(context) {
+    return {
+      "Sciencenotes": HighlightedWord(
+        onTap: () {
+          makeDialog(context, text);
+        },
+        textStyle: const TextStyle(
+          color: Colors.purple,
+        ),
+      ),
+    };
   }
   @override
   Widget build(BuildContext context) {
@@ -35,6 +56,17 @@ class _ResumePageState extends State<ResumePage> {
             },
             icon: const Icon(Icons.search_rounded),),
         ],
+      ),
+      body: Center(
+        child: TextHighlight(
+          text: text,
+          words: makewords(context),
+          textStyle: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
       ),
     );
   }
