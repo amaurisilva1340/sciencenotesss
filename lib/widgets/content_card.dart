@@ -46,7 +46,7 @@ class _ContentCardState extends State<ContentCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.content.resume,
+                          widget.content.introduction,
                           style: const TextStyle(
                             fontSize: 18,
                             fontFamily: 'Abel-Regular',

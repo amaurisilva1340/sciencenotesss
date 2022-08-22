@@ -147,7 +147,7 @@ class _ChangeDataPage extends State<ChangeDataPage>{
 
   void onPressedButton() {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(
+      Navigator.pop(
         context,
         MaterialPageRoute(
           builder: (context) {

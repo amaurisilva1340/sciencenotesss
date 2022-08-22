@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sciencenotes/domain/question.dart';
+import 'package:sciencenotes/domain/resume.dart';
 
 class Content {
   final String image;
   final String title;
-  final String resume;
+  final String introduction;
+  final Resume resume;
   final String aplicacao;
   final String equacao;
   final Color colorButton;
@@ -14,6 +16,7 @@ class Content {
   Content({
     required this.image,
     required this.title,
+    required this.introduction,
     required this.resume,
     required this.aplicacao,
     required this.equacao,

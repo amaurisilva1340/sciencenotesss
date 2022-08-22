@@ -50,7 +50,7 @@ class BD {
   ];
 
   static Future<List<People>> getPeople() async {
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 3));
     return list;
   }
 

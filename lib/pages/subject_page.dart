@@ -4,6 +4,7 @@ import 'package:sciencenotes/pages/home_page.dart';
 import 'package:sciencenotes/pages/resume_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sciencenotes/pages/search_page.dart';
 import 'package:sciencenotes/pages/videos_page.dart';
 import 'package:sciencenotes/pages/questions_page.dart';
 import 'package:sciencenotes/pages/profile_page.dart';
@@ -27,9 +28,9 @@ class _SubjectPageState extends State<SubjectPage> {
 
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      const ResumePage(),
+      ResumePage(content: widget.content),
       const VideosPage(),
-      QuestionsPage(conteudo: widget.content),
+      QuestionsPage(content: widget.content),
       const ProfilePage(),
     ];
 
@@ -42,13 +43,13 @@ class _SubjectPageState extends State<SubjectPage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.home),
-            onPressed: onPressedButton,
+            icon: selectedIndex==0 ? const Icon(Icons.search_rounded) : const Icon(Icons.home),
+            onPressed: selectedIndex==0 ? (){showSearch(context: context, delegate: SearchPage());} : onPressedButtonHome,
           ),
         ],
         backgroundColor: const Color.fromARGB(255, 45, 16, 51),
       ),
-      backgroundColor: const Color.fromARGB(255, 216, 194, 221),
+      backgroundColor: const Color.fromARGB(255, 216, 194, 225),
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -77,7 +78,7 @@ class _SubjectPageState extends State<SubjectPage> {
     });
   }
 
-  void onPressedButton() {
+  void onPressedButtonHome() {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(

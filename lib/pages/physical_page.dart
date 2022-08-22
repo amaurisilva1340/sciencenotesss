@@ -45,11 +45,8 @@ class _PhysicalPageState extends State<PhysicalPage> {
     return FutureBuilder<List<Content>>(
       future: list,
       builder: (context, snapshot) {
-
         if(snapshot.hasData) {
-          // ?? -> Verificar ser o conteudo de snapshot.data é nulo
           List<Content> list = snapshot.data ?? [];
-
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -59,9 +56,7 @@ class _PhysicalPageState extends State<PhysicalPage> {
             },
           );
         }
-
         return const Center(child: CircularProgressIndicator());
-
       },
     );
   }

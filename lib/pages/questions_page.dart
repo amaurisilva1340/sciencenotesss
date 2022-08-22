@@ -4,11 +4,11 @@ import 'package:sciencenotes/widgets/question_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class QuestionsPage extends StatefulWidget {
-  final Content conteudo;
+  final Content content;
 
   const QuestionsPage({
     Key? key,
-    required this.conteudo,
+    required this.content,
   }) : super(key: key);
 
   @override
@@ -48,11 +48,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
     // );
     return ListView(
       children: [
-        QuestionCard(content: widget.conteudo, index: 0,),
+        QuestionCard(content: widget.content, index: 0,),
         const SizedBox(height: 2,),
-        QuestionCard(content: widget.conteudo, index: 1,),
+        QuestionCard(content: widget.content, index: 1,),
         const SizedBox(height: 2,),
-        QuestionCard(content: widget.conteudo, index: 2,),
+        QuestionCard(content: widget.content, index: 2,),
         const SizedBox(height: 2,),
       ],
     );

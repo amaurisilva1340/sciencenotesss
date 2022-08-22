@@ -27,14 +27,16 @@ class _ChemicalPageState extends State<ChemicalPage> {
         ),
       ),
       backgroundColor: Colors.deepPurple.shade50,
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          color: Colors.deepPurple.shade50,
-          child: ListView(
-            children: [
-              buildListView(),
-            ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: Colors.deepPurple.shade50,
+            child: ListView(
+              children: [
+                buildListView(),
+              ],
+            ),
           ),
         ),
       ),
@@ -45,11 +47,8 @@ class _ChemicalPageState extends State<ChemicalPage> {
     return FutureBuilder<List<Content>>(
       future: list,
       builder: (context, snapshot) {
-
         if(snapshot.hasData) {
-          // ?? -> Verificar ser o conteudo de snapshot.data é nulo
           List<Content> list = snapshot.data ?? [];
-
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -59,9 +58,7 @@ class _ChemicalPageState extends State<ChemicalPage> {
             },
           );
         }
-
         return const Center(child: CircularProgressIndicator());
-
       },
     );
   }
