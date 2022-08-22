@@ -11,6 +11,8 @@ class ResumePage extends StatefulWidget {
 
 class _ResumePageState extends State<ResumePage> {
   String text = "O aplicativo Sciencenotes foi feito para ajudar pessoas com dificudade nos campos da ciência";
+
+  get children => null;
   
   makeDialog(BuildContext context, String text){
     showDialog(
@@ -25,7 +27,7 @@ class _ResumePageState extends State<ResumePage> {
 
   Map<String, HighlightedWord> makewords(context) {
     return {
-      "Sciencenotes": HighlightedWord(
+      "Sciencenotes ": HighlightedWord(
         onTap: () {
           makeDialog(context, text);
         },
@@ -58,15 +60,25 @@ class _ResumePageState extends State<ResumePage> {
         ],
       ),
       body: Center(
-        child: TextHighlight(
+        child:
+        children[
+        ElevatedButton(
+        onPressed: onPressedButton,
+        style: ElevatedButton.styleFrom(
+          primary: const Color.fromARGB(255, 45, 16, 51),
+          minimumSize: (const Size(120, 40)),
+        ), child: null,
+      ),
+        TextHighlight(
           text: text,
           words: makewords(context),
           textStyle: const TextStyle(
             fontWeight: FontWeight.normal,
             fontSize: 16,
             color: Colors.black,
-          ),
-        ),
+              ),
+            ),
+          ]
       ),
     );
   }
